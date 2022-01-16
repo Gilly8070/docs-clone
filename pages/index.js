@@ -18,7 +18,7 @@ export default function Home() {
   const [session] = useSession();
   const [showModal, setShowModal] = useState(false);
   const [input, setInput] = useState('');
-  const [snapshot] = useCollectionOnce(db.collection('useDocs').doc(session.user.email).collection('docs').orderBy('timestamp', 'desc')
+  const [snapshot] = useCollectionOnce(db.collection('useDocs').doc(session?.user?.email).collection('docs').orderBy('timestamp', 'desc')
   );
 
   console.log(snapshot, snapshot?.docs.map((doc) => doc.id));
